@@ -1,3 +1,6 @@
+const dbUser = process.env.DB_USER;
+const dbPass = process.env.DB_PASS;
+
 // imports
 const express = require('express');
 const exphbs = require('express-handlebars');
@@ -33,8 +36,10 @@ app.get("/", async (req, res) => {
 app.use('/notes', notesRoutes)
 
 db.initDb((err, db) => {
+    
     if(err) {
         console.log(`\x1b[31mA conexão com o banco foi recusada! Error: ${err}`)
+        console.log(dbUser)
     } else {
         console.clear();
         console.log(`\x1b[32mConexão com o banco de dados efetuada!`)
