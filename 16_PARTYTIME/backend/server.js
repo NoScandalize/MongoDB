@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors")
 
-// routes improt
+// routes import
 const authRouter = require("./routes/authRoutes");
 const userRouter = require("./routes/userRoutes");
 const partyRouter = require('./routes/partyRoutes');
